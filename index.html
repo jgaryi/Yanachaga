@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Yanachaga Project</title>
+  <title>Yanachaga - Riesgos y Conservación</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0 20px;
+    }
+    #map {
+      height: 400px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to the Yanachaga Project</h1>
-  <p>This site showcases our work on conservation, ecology, and research in the Yanachaga area.</p>
+
+  <h1>Yanachaga: Riesgos Naturales y Resiliencia Comunitaria</h1>
+
+  <p>
+    El Parque Nacional Yanachaga-Chemillén se enfrenta a múltiples amenazas naturales como deslizamientos, inundaciones y cambios climáticos extremos.
+    Esta página explora la geografía del riesgo y narra historias de comunidades locales que han desarrollado formas de adaptación.
+  </p>
+
+  <div id="map"></div>
+
+  <h2>Una historia desde el valle</h2>
+  <p>
+    En 2020, tras una intensa temporada de lluvias, la comunidad de Oxapampa enfrentó un deslizamiento que bloqueó accesos principales. 
+    Gracias a la organización comunal y apoyo de guardaparques, se logró evacuar a las familias en riesgo y coordinar ayuda humanitaria.
+    Esta experiencia fortaleció la resiliencia local y motivó proyectos de monitoreo ambiental.
+  </p>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([-10.577, -75.405], 10); // Coordenadas aproximadas de Yanachaga
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([-10.577, -75.405]).addTo(map)
+      .bindPopup("Parque Nacional Yanachaga-Chemillén")
+      .openPopup();
+  </script>
+
 </body>
 </html>
