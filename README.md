@@ -1,8 +1,9 @@
 # Repositorio del Proyecto ANP Yanachaga #
 ## II CopernicusLAC Hackathon: Reducción del riesgo de desastres ##
 
+Este repositorio contiene las capas vectoriales y raster del modelo FSLAM, junto con mapas, simbología y visualizadores web.
 
-
+```plaintext
 
 fslam-capas/
 │
